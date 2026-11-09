@@ -31,8 +31,8 @@
       SITE_TYPE: 'TAMBOL',
       SEO_TITLE: "ศกร.ระดับตำบลทะเลชุบศร",
       SEO_DESCRIPTION: "เว็บไซต์ศูนย์การเรียนรู้ระดับตำบล เรียนรู้ทุกที่ ทุกเวลา ทุกช่วงวัย",
-      MAIN_EXEC_URL: "https://script.google.com/macros/s/AKfycby9AOhUnKjAbgfGfQzm5T_p7tyd2Lq3ubj8lp3zUUGdRPkmw9QpJOmiftj9RvKajyfRBA/exec",
-      STUDENT_PROFILE_EXEC_URL: "https://script.google.com/macros/s/AKfycbyKHDdsyMFt5PpxKLF7nIeffzUiEKK6Na5-onqsE1pJZMUEJOiS74cij6EZQEa5IdqB/exec",
+      MAIN_EXEC_URL: "https://script.google.com/macros/s/AKfycbzWSiVnG5cj-9UyoUeugJVUCs_PoDWl4QZHJh5eQzA8WiSRaGXWtQa1tBjT6syc9tyR8A/exec",
+      STUDENT_PROFILE_EXEC_URL: "https://script.google.com/macros/s/AKfycbwxHClIRpyrbySov4gAxitfvIGeO5fqQKRkooPNVTIitxmw5IJL2Uc2pNFDFZW_D7FN/exec",
       CACHE_PREFIX: "LP360:TAMBOL:THALECHUPSORN:"
     })
   });
