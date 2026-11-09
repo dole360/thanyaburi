@@ -12,9 +12,9 @@
   // หน้า User ที่ใช้งาน: /user/1.html
   const USER_PAGES = Object.freeze({
     '1': Object.freeze({
-      EXEC_URL: 'https://script.google.com/macros/s/AKfycbykZh8IUDLwRStAvvoh_ISosL0TT_BiChm-c6P5tBdKUph2V3hEXSDtiOyYHpfHI6mz/exec',
-      SEO_TITLE: 'ศกร.ระดับตำบลโคกลำพาน',
-      SEO_DESCRIPTION: 'ศกร.ระดับตำบลโคกลำพาน'
+      EXEC_URL: 'https://script.google.com/macros/s/AKfycbwxHClIRpyrbySov4gAxitfvIGeO5fqQKRkooPNVTIitxmw5IJL2Uc2pNFDFZW_D7FN/exec',
+      SEO_TITLE: 'ศกร.ระดับตำบลประชาธิปัตย์',
+      SEO_DESCRIPTION: 'ศกร.ระดับตำบลประชาธิปัตย์'
     })
   });
 
