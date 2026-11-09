@@ -1,0 +1,10 @@
+วิธีเผยแพร่ URL https://dole360.github.io/prachatipatai/
+1. ใช้บัญชี/องค์กร GitHub dole360 และ repository ชื่อ dole360.github.io
+2. วางไฟล์ทั้งหมดใน ZIP ที่ root ของ repository โดยคงโฟลเดอร์ prachatipatai
+3. Settings > Pages เลือก Deploy from a branch, main, /(root)
+4. ไม่ใช้ CNAME เดิม bangrak-dole.ac.th; หากมี CNAME ใน repository เป้าหมายให้ตรวจและนำออกสำหรับการใช้ github.io
+5. URL เดิมใน repository thanyaburi ไม่เปลี่ยนโดยอัตโนมัติ ต้องแก้ลิงก์ที่เผยแพร่ไว้ด้วย
+ปรับ SITES ให้เหลือ prachatipatai และ fallback เป็น prachatipatai
+เปลี่ยน CACHE_PREFIX เป็น LP360:TAMBOL:PRACHATIPATAI: ทำให้เริ่มแคชและค่าตั้งเบราว์เซอร์ชุดใหม่
+หน้า root เปลี่ยนทางไป ./prachatipatai/
+USER_PAGES[1] คงค่าตามไฟล์แนบ
