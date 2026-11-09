@@ -1,0 +1,67 @@
+name: Apply metadata and icon from sites-config
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'sites-config.js'
+      - 'user/**'
+      - 'tools/update-seo.mjs'
+      - '.github/workflows/update-line-seo.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lp360-static-seo
+  cancel-in-progress: true
+
+jobs:
+  update-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Write title description and icon from sites-config.js
+        run: node tools/update-seo.mjs
+
+      - name: Verify static metadata and favicon
+        shell: bash
+        run: |
+          set -e
+          files=(index.html)
+          for d in */; do
+            if [ -f "$d/index.html" ]; then files+=("$d/index.html"); fi
+          done
+          for f in user/[0-9]*.html; do
+            if [ -f "$f" ]; then files+=("$f"); fi
+          done
+          for f in "${files[@]}"; do
+            grep -Eq '<title[^>]*>[^<]+</title>' "$f" || { echo "ERROR: $f title ว่าง"; exit 1; }
+            grep -Eq '<meta name="description" content="[^"]+' "$f" || { echo "ERROR: $f description ว่าง"; exit 1; }
+            grep -Eq '<meta property="og:title" content="[^"]+' "$f" || { echo "ERROR: $f ไม่มี og:title"; exit 1; }
+            grep -Eq '<meta property="og:description" content="[^"]+' "$f" || { echo "ERROR: $f ไม่มี og:description"; exit 1; }
+            grep -Eq 'data-lp360-static-icon="1"' "$f" || { echo "ERROR: $f ไม่มี favicon กลาง"; exit 1; }
+          done
+
+      - name: Commit generated metadata and favicon
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "SEO ไม่มีการเปลี่ยนแปลง"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u -- .
+          git commit -m "chore: apply static LINE SEO from sites-config [skip ci]"
+          git push

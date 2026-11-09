@@ -1,0 +1,1 @@
+This ZIP is the complete reduced repository, not an overlay. Remove paths listed in REMOVED_PATHS.txt from the old repository. Keep root district, thalechupsorn and user/1.html. GitHub write failed with integration 403; remote main is unchanged.
