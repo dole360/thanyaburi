@@ -12,7 +12,7 @@
   // หน้า User ที่ใช้งาน: /user/1.html
   const USER_PAGES = Object.freeze({
     '1': Object.freeze({
-      EXEC_URL: 'https://script.google.com/macros/s/AKfycbwxHClIRpyrbySov4gAxitfvIGeO5fqQKRkooPNVTIitxmw5IJL2Uc2pNFDFZW_D7FN/exec',
+      EXEC_URL: 'https://script.google.com/macros/s/AKfycbx5uM6bfNRDbdQ5q2SmvUPr6d97oKqQ3v7QGoCiUxNUHlgRxf9pzDPZPYy8Z8-U0ViBNg/exec',
       SEO_TITLE: 'ศกร.ระดับตำบลประชาธิปัตย์',
       SEO_DESCRIPTION: 'ศกร.ระดับตำบลประชาธิปัตย์'
     })
